@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
       navigatorKey: AppNavigator.key,
       debugShowCheckedModeBanner: false,
       title: 'Recast Design',
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
       home: OrderScreen(),
     );
   }

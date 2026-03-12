@@ -36,6 +36,7 @@ class CustomText extends StatelessWidget {
           text,
           textAlign: textAlign,
           style: TextStyle(
+            fontFamily: 'Satoshi',
             fontSize: fontSize,
             fontWeight: fontWeight,
             height: height,
@@ -49,6 +50,7 @@ class CustomText extends StatelessWidget {
         text,
         textAlign: textAlign,
         style: TextStyle(
+          fontFamily: 'Satoshi',
           fontSize: fontSize,
           fontWeight: fontWeight,
           height: height,
