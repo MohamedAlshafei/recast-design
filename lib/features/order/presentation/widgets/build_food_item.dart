@@ -1,12 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:recast_design/features/home/presentation/screens/order_details_screen.dart';
-import 'package:recast_design/features/home/data/models/order_model.dart';
 import 'package:recast_design/core/widgets/custom_blur_button.dart';
 import 'package:recast_design/core/helper/app_navigator.dart';
 import 'package:recast_design/core/widgets/custom_text.dart';
 import 'package:recast_design/core/style/app_colors.dart';
 import 'package:recast_design/core/style/app_sizes.dart';
+
+import '../../data/models/order_model.dart';
+import '../screens/order_details_screen.dart';
 
 class BuildFoodItem extends StatelessWidget {
   const BuildFoodItem({super.key, required this.product});

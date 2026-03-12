@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:recast_design/features/home/presentation/widgets/build_food_item.dart';
-import 'package:recast_design/features/home/presentation/controller/order_state.dart';
-import 'package:recast_design/features/home/presentation/controller/order_cubit.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:recast_design/features/home/data/repo/order_repo_impl.dart';
 import 'package:recast_design/core/widgets/custom_blur_button.dart';
 import 'package:recast_design/core/widgets/custom_text.dart';
 import 'package:recast_design/core/style/app_colors.dart';
 import 'package:recast_design/core/style/app_sizes.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../data/repo/order_repo_impl.dart';
+import '../controller/order_cubit.dart';
+import '../controller/order_state.dart';
+import '../widgets/build_food_item.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});

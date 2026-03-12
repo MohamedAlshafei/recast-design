@@ -1,9 +1,10 @@
-// const String images = 'assets/images';
-//
-// class AppImages {
-//   static String steak = '$images/steak.png';
-//   static String ceen = '$images/ceen1.png';
-//   static String profile = '$images/profile.png';
-//   static String ceen2 = '$images/ceen2.png';
-//   static String symphony = '$images/symphony_roll.png';
-// }
+const String images = 'assets/images';
+
+class AppAssets {
+  // static String steak = '$images/steak.png';
+  // static String ceen = '$images/ceen1.png';
+  // static String profile = '$images/profile.png';
+  // static String ceen2 = '$images/ceen2.png';
+  // static String symphony = '$images/symphony_roll.png';
+  static String dataUrl = 'assets/data/order_data.json';
+}

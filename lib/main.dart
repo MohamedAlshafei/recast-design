@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/home/presentation/screens/order_screen.dart';
 import 'core/helper/app_navigator.dart';
+import 'features/order/presentation/screens/order_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: AppNavigator.key,
       debugShowCheckedModeBanner: false,
       title: 'Recast Design',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: ThemeData(useMaterial3: true),
       home: OrderScreen(),
     );
   }
