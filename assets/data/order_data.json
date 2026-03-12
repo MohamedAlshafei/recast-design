@@ -14,7 +14,6 @@
   "products": [
     {
       "name": "Tenderloin Steak",
-      "image": "assets/images/steak.png",
       "description": "Premium tenderloin steak served with grilled vegetables and golden fries. Seasoned with our secret spice blend.",
       "price": "45.95 JOD",
       "category": "Main Course",
