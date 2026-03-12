@@ -1,15 +1,16 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:recast_design/core/constants/app_assets.dart';
+import 'package:recast_design/features/home/data/models/order_model.dart';
+import 'package:recast_design/core/widgets/custom_blur_button.dart';
+import 'package:recast_design/core/helper/app_navigator.dart';
+import 'package:recast_design/core/widgets/custom_text.dart';
 import 'package:recast_design/core/style/app_colors.dart';
 import 'package:recast_design/core/style/app_sizes.dart';
-import 'package:recast_design/core/widgets/custom_text.dart';
 
-import '../../../core/widgets/custom_blur_button.dart';
+import '../widgets/preparation_component.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
-  const OrderDetailsScreen({super.key});
+  const OrderDetailsScreen({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   height: AppSize.getHeight(249),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(AppImages.steak),
+                      image: AssetImage(product.image),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.only(
@@ -38,17 +39,20 @@ class OrderDetailsScreen extends StatelessWidget {
 
                 /// BLUR BACK BUTTON
                 PositionedDirectional(
-                  start: AppSize.getWidth(20),
-                  top: AppSize.getHeight(30),
-                  child: BlurCircleButton(
-                    size: AppSize.getSize(48),
-                    borderRadius: AppSize.getSize(25),
-                    borderColor: AppColors.black30,
-                    blur: 4,
-                    child: Icon(
-                      Icons.arrow_back_outlined,
-                      size: AppSize.getSize(20),
-                      color: AppColors.white,
+                  start: AppSize.getWidth(13),
+                  top: AppSize.getHeight(32),
+                  child: GestureDetector(
+                    onTap: () => AppNavigator.pop(),
+                    child: BlurCircleButton(
+                      size: AppSize.getSize(48),
+                      borderRadius: AppSize.getSize(25),
+                      borderColor: AppColors.black30,
+                      blur: 4,
+                      child: Icon(
+                        Icons.arrow_back_outlined,
+                        size: AppSize.getSize(20),
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -74,22 +78,21 @@ class OrderDetailsScreen extends StatelessWidget {
 
             Padding(
               padding: AppSize.padding(
-                start: AppSize.getWidth(20),
-                end: AppSize.getWidth(20),
+                start: AppSize.getWidth(15),
+                end: AppSize.getWidth(15),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    text: "Main Course",
+                    text: product.category,
                     fontWeight: FontWeight.w700,
                     fontSize: AppSize.font(10),
                     color: AppColors.grey60,
                     letterSpacing: -0.05,
                   ),
-                  SizedBox(height: AppSize.getHeight(5)),
                   CustomText(
-                    text: "Tenderloin Steak with Grilled Vegetables & Fries",
+                    text: product.name,
                     fontWeight: FontWeight.w700,
                     fontSize: AppSize.font(18),
                     height: 1.2,
@@ -101,11 +104,9 @@ class OrderDetailsScreen extends StatelessWidget {
                       end: Alignment.centerRight,
                     ),
                   ),
-                  SizedBox(height: AppSize.getHeight(10)),
+                  SizedBox(height: AppSize.getHeight(6)),
                   CustomText(
-                    text:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-
+                    text: product.description,
                     fontSize: AppSize.font(11),
                     fontWeight: FontWeight.w500,
                     color: AppColors.white,
@@ -113,7 +114,7 @@ class OrderDetailsScreen extends StatelessWidget {
                     letterSpacing: -0.05,
                   ),
 
-                  SizedBox(height: AppSize.getHeight(20)),
+                  SizedBox(height: AppSize.getHeight(14)),
                   CustomText(
                     text: "Preparation",
                     fontSize: AppSize.font(10),
@@ -122,62 +123,18 @@ class OrderDetailsScreen extends StatelessWidget {
                     letterSpacing: -0.05,
                   ),
 
-                  SizedBox(height: AppSize.getHeight(15)),
+                  SizedBox(height: AppSize.getHeight(9)),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        padding: AppSize.padding(
-                          vertical: AppSize.getHeight(10),
-                          horizontal: AppSize.getWidth(10),
-                        ),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: AppColors.white30,
-                          border: Border.all(
-                            width: AppSize.getSize(1),
-                            color: AppColors.white18,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            AppSize.getSize(6),
-                          ),
-                        ),
-                        child: CustomText(
-                          text: "20 Minute",
-                          fontSize: AppSize.font(10),
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.white,
-                          letterSpacing: -0.05,
-                        ),
-                      ),
-                      SizedBox(width: AppSize.getWidth(5)),
-                      Container(
-                        padding: AppSize.padding(
-                          vertical: AppSize.getHeight(10),
-                          horizontal: AppSize.getWidth(10),
-                        ),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: AppColors.white30,
-                          border: Border.all(
-                            width: AppSize.getSize(1),
-                            color: AppColors.white18,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            AppSize.getSize(6),
-                          ),
-                        ),
-                        child: CustomText(
-                          text: "Serving Size: 1",
-                          fontSize: AppSize.font(10),
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.white,
-                          letterSpacing: -0.05,
-                        ),
+                      PreparationTimeBadge(text: product.preparationTime),
+                      SizedBox(width: AppSize.getWidth(4)),
+                      PreparationTimeBadge(
+                        text: "Serving Size: ${product.servingSize}",
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSize.getHeight(25)),
+                  SizedBox(height: AppSize.getHeight(27)),
 
                   Row(
                     children: [
@@ -185,7 +142,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       Column(
                         children: [
                           CustomText(
-                            text: "45.95 JD",
+                            text: product.price,
                             fontSize: AppSize.font(15),
                             fontWeight: FontWeight.w700,
                             color: AppColors.white,
@@ -238,7 +195,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               height: 0.98,
                             ),
 
-                            SizedBox(width: AppSize.getWidth(20)),
+                            SizedBox(width: AppSize.getWidth(10)),
 
                             /// BLUR BUTTON
                             BlurCircleButton(
