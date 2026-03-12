@@ -1,0 +1,66 @@
+{
+  "header_image": "assets/images/ceen1.png",
+  "profile_image": "assets/images/profile.png",
+  "category": "International Cuisine",
+  "title": "CEANO RESTAURANT",
+  "description": "Experience the finest international flavors in a modern Atmosphere. Our menu features a curated selection of gourmet dishes crafted with passion.",
+  "atmosphere_title": "Atmosphere",
+  "slider_images": [
+    "assets/images/ceen1.png",
+    "assets/images/steak.png",
+    "assets/images/ceen2.png"
+  ],
+  "food_menu_title": "Food Menu",
+  "products": [
+    {
+      "name": "Tenderloin Steak",
+      "image": "assets/images/steak.png",
+      "description": "Premium tenderloin steak served with grilled vegetables and golden fries. Seasoned with our secret spice blend.",
+      "price": "45.95 JOD",
+      "category": "Main Course",
+      "preparation_time": "30 Minute",
+      "serving_size": 1,
+      "status": "pending"
+    },
+    {
+      "name": "Ceano Pasta",
+      "image": "assets/images/ceen2.png",
+      "description": "Creamy white sauce pasta with grilled chicken and fresh mushrooms, topped with parmesan cheese.",
+      "price": "32.50 JOD",
+      "category": "Main Course",
+      "preparation_time": "15 Minute",
+      "serving_size": 2,
+      "status": "delivered"
+    },
+    {
+      "name": "Grilled Salmon",
+      "image": "assets/images/ceen1.png",
+      "description": "Fresh Atlantic salmon grilled to perfection, served with lemon butter sauce and asparagus.",
+      "price": "38.00 JOD",
+      "category": "Main Course",
+      "preparation_time": "25 Minute",
+      "serving_size": 1,
+      "status": "pending"
+    },
+    {
+      "name": "Sushi Symphony Roll",
+      "image": "assets/images/symphony_roll.png",
+      "description": "Fresh salmon, avocado, and shrimp tempura rolls. A symphony of flavors wrapped in every roll.",
+      "price": "35.50 JOD",
+      "category": "Sushi",
+      "preparation_time": "18 Minute",
+      "serving_size": 1,
+      "status": "delivered"
+    },
+    {
+      "name": "Classic Burger",
+      "image": "assets/images/steak.png",
+      "description": "Juicy beef patty with fresh lettuce, tomato, onions, and our signature burger sauce in a brioche bun.",
+      "price": "28.00 JOD",
+      "category": "Burgers",
+      "preparation_time": "10 Minute",
+      "serving_size": 1,
+      "status": "pending"
+    }
+  ]
+}

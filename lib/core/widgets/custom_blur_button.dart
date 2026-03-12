@@ -8,8 +8,8 @@ class BlurCircleButton extends StatelessWidget {
     this.size = 36,
     this.blur = 2,
     this.borderRadius = 18,
-    this.borderColor = const Color(0x33000000), // default شفاف أسود
-    this.backgroundColor = const Color(0x33000000), // default شفاف أسود
+    this.borderColor = const Color(0x33000000),
+    this.backgroundColor = const Color(0x33000000),
   });
 
   final Widget child;
